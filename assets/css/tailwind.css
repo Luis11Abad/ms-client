@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Jost', sans-serif;
+}
+
+div {
+    @apply flex;
+}
+
+button {
+    @apply h-12 hover:bg-inherit hover:!bg-opacity-90;
+}
