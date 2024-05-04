@@ -1,0 +1,18 @@
+input {
+    @apply bg-white border w-full rounded-md h-11 px-4 mb-4 text-sm;
+}
+
+* {
+    font-family: 'Jost', sans-serif;
+}
+
+div {
+    @apply flex;
+}
+
+button {
+    @apply h-12 hover:bg-inherit hover:!bg-opacity-90;
+    &:disabled {
+        @apply !bg-gray-100;
+    }
+}
