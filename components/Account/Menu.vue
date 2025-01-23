@@ -36,7 +36,7 @@ const authStore = useAuthStore()
             @apply mb-0;
         }
         a {
-            @apply h-10 flex items-center gap-x-2.5 px-4 w-52 rounded text-sm hover:bg-primary/10;
+            @apply h-10 flex items-center gap-x-2.5 px-4 w-52 rounded  hover:bg-primary/10;
             &.router-link-exact-active {
                 @apply bg-primary/50;
             }
@@ -50,7 +50,7 @@ const authStore = useAuthStore()
     }
 }
 .logout-btn {
-    @apply hidden md:flex h-10 mt-2 items-center gap-x-2.5 text-sm px-8;
+    @apply hidden md:flex h-10 mt-2 items-center gap-x-2.5  px-8;
     svg {
         @apply text-lg;
     }

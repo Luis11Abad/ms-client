@@ -4,9 +4,11 @@ export default <Partial<Config>>{
     theme: {
         extend: {
             colors: {
-                light: '#F6F2EB',
+                primary: '#153045',
+                secondary: '#78290f',
+                light: '#f5f4f4',
                 grey: '#6e6d7a',
-                dark: '#263442',
+                dark: '#0D1923',
                 accent: '#B99056',
             },
         },

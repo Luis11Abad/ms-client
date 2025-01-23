@@ -8,7 +8,7 @@ definePageMeta({
 const { t } = useI18n()
 
 useSeoMeta({
-    title: `${t('confirm-account')} | LAMPS Admin`,
+    title: `${t('confirm-account')} | ${config.public.appName}`,
 })
 </script>
 <template>
@@ -23,7 +23,7 @@ useSeoMeta({
 #sign-up {
     @apply flex-1 w-screen flex flex-col justify-center items-center relative bg-light;
     .copyright {
-        @apply text-sm mt-3 mx-auto;
+        @apply mt-3 mx-auto;
     }
 }
 </style>

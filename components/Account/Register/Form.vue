@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 
-const supabase = useSupabaseClient()
-
 const specialCharacterRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/ //eslint-disable-line
 const numberRegex = /\d/
 
@@ -21,18 +19,7 @@ const passwordNumberOrSpecialValidated = computed(
 
 async function register() {
     try {
-        const { error } = await supabase.auth.signUp({
-            email: email.value,
-            password: password.value,
-            options: {
-                data: {
-                    name: name.value,
-                    phone: phone.value == '' ? null : phone,
-                },
-            },
-        })
-        errorMessage.value = error?.message ?? ''
-        if (error == null) navigateTo('/account/confirm')
+        console.log('to-do')
     } catch (err) {
         errorMessage.value = JSON.stringify(err) ?? ''
     }
@@ -106,7 +93,7 @@ async function register() {
 </template>
 <style>
 #sign-up form {
-    @apply flex flex-col bg-white shadow-lg p-8 rounded-3xl w-11/12 max-w-md;
+    @apply flex flex-col bg-white border p-8 rounded-3xl w-11/12 max-w-md;
     h2 {
         @apply text-2xl font-semibold mx-auto tracking-tight;
     }
@@ -114,21 +101,18 @@ async function register() {
         @apply text-center mt-5 mb-7;
     }
     p {
-        @apply text-sm text-black my-6 mx-auto;
+        @apply  text-black my-6 mx-auto;
     }
     a {
-        @apply font-semibold hover:underline cursor-pointer text-sm;
-    }
-    input {
-        @apply bg-white border w-full rounded-md h-11 px-4 mb-4 text-sm;
+        @apply font-semibold hover:underline cursor-pointer ;
     }
     button {
-        @apply bg-primary rounded-lg text-black h-11 mt-1 text-sm hover:bg-primary/90;
+        @apply bg-primary rounded-lg text-black h-11 mt-1  hover:bg-primary/90;
     }
     .password-validator {
         @apply list-none -mt-1 mb-6 pl-4;
         li {
-            @apply text-sm flex items-center gap-x-2;
+            @apply  flex items-center gap-x-2;
             svg {
                 @apply text-lg scale-[.8];
             }

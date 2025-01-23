@@ -1,5 +1,9 @@
+body {
+    @apply bg-light;
+}
+
 input {
-    @apply bg-white border w-full rounded-md h-11 px-4 mb-4 text-sm;
+    @apply outline-none;
 }
 
 * {

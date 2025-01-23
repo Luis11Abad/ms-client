@@ -16,24 +16,11 @@ export const accountSections = [
         label: 'Solicitudes personalizadas',
     },
     {
-        key: 'AccountSections.TRACKING',
+        key: '',
         label: 'Seguimiento de pedido',
     },
 ]
 
-export const adminSections = [
-    {
-        key: 'dashboard',
-        icon: 'solar:chart-square-linear',
-    },
-    {
-        key: 'users',
-        icon: 'solar:users-group-rounded-linear',
-    },
-    {
-        key: 'file-manager',
-        icon: 'solar:gallery-wide-outline',
-    },
-]
-
-export const dataHiddenFields = ['id']
+export const AUTH_ROUTES = ['login', 'recover', 'register']
+export const ACCOUNT_ROUTE_NAME = 'account'
+export const LOGIN_ROUTE = '/account/login'

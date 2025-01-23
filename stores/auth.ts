@@ -1,29 +1,26 @@
 export const useAuthStore = defineStore(
     'auth',
     () => {
-        const info: Ref<User | null> = ref(null)
-        const isAdmin: Ref<boolean> = ref(false)
+        const user: Ref<User | null> = ref(null)
 
         const authToken = useCookie('access_token')
 
         function authenticateUser(data: Auth) {
             const { token, ...userData } = data
-            info.value = { ...userData }
-            isAdmin.value = userData.hasAdminAccess
 
+            user.value = { ...userData }
             authToken.value = token
 
-            navigateTo(userData.hasAdminAccess ? '/admin' : '/account')
+            navigateTo('/account')
         }
 
         function logout() {
-            info.value = null
-            isAdmin.value = false
+            user.value = null
 
             authToken.value = null
         }
 
-        return { authenticateUser, isAdmin, info, logout }
+        return { authenticateUser, user, logout }
     },
     {
         persist: true,

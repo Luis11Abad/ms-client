@@ -11,7 +11,7 @@ interface User extends Entity {
     email: string
     name: string
     lastname: string
-    hasAdminAccess: boolean
+    isVerified: boolean
 }
 
 interface Auth extends User {

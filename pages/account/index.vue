@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { account } = useAccount()
+</script>
 <template>
-    <div></div>
+    <div>{{ account }}</div>
 </template>

@@ -5,26 +5,22 @@ definePageMeta({
 
 const { t } = useI18n()
 const config = useRuntimeConfig()
-const user = useSupabaseUser()
 
 const authStore = useAuthStore()
 
 useSeoMeta({
-    title: `${t('confirm')} | LAMPS Admin`,
+    title: `${t('confirm')} | ${config.public.appName}`,
 })
 
+const { user } = storeToRefs(authStore)
+
 if (user.value == null) navigateTo('/account/login')
-if (user.value?.email_confirmed_at) {
-    authStore.getUserInfo(user.value.id)
-    navigateTo('/account')
-}
+if (user.value?.isVerified) navigateTo('/account')
 </script>
 <template>
     <div id="confirm">
         <div class="panel">
-            <AccountConfirmEmailInstructions
-                v-if="user?.email_confirmed_at == null"
-            />
+            <AccountConfirmEmailInstructions v-if="!user?.isVerified" />
             <AccountConfirmRedirectInfo v-else />
         </div>
         <span class="copyright"
@@ -45,7 +41,7 @@ if (user.value?.email_confirmed_at) {
         }
     }
     .copyright {
-        @apply text-sm mt-3 mx-auto;
+        @apply mt-3 mx-auto;
     }
 }
 </style>
