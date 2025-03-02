@@ -27,14 +27,14 @@ async function GoogleLogin() {}
 </script>
 <template>
     <NuxtLayout name="auth" title="Que bueno tenerte de vuelta">
+        <button class="social-button" @click.prevent="GoogleLogin">
+            <Icon icon="logos:google-icon" />{{ $t('login-with-google') }}
+        </button>
+        <button class="social-button">
+            <Icon icon="logos:facebook" />{{ $t('login-with-facebook') }}
+        </button>
+        <p>{{ $t('or-enter-your-credentials') }}</p>
         <form @submit.prevent="login">
-            <button class="social-button" @click.prevent="GoogleLogin">
-                <Icon icon="logos:google-icon" />{{ $t('login-with-google') }}
-            </button>
-            <button class="social-button">
-                <Icon icon="logos:facebook" />{{ $t('login-with-facebook') }}
-            </button>
-            <p>{{ $t('or-enter-your-credentials') }}</p>
             <input
                 v-model="email"
                 :placeholder="$t('email')"
@@ -54,12 +54,10 @@ async function GoogleLogin() {}
             }}</nuxt-link>
             <button>{{ $t('sign-in') }}</button>
             <span class="text-center text-red-500">{{ errorMessage }}</span>
-            <p>
-                {{ $t('ask-no-account') }}
-                <nuxt-link to="/account/register"
-                    >{{ $t('sign-up') }}.</nuxt-link
-                >
-            </p>
         </form>
+        <p>
+            {{ $t('ask-no-account') }}
+            <nuxt-link to="/account/register">{{ $t('sign-up') }}.</nuxt-link>
+        </p>
     </NuxtLayout>
 </template>

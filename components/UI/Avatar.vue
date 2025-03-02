@@ -12,6 +12,6 @@ const { name, picture } = defineProps<{
 </template>
 <style scoped>
 .avatar {
-    @apply flex items-center justify-center text-lg h-8 w-8 rounded-full bg-blue-500 text-white;
+    @apply flex items-center justify-center text-lg h-8 w-8  bg-blue-500 text-white;
 }
 </style>

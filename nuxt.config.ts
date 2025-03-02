@@ -6,12 +6,16 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         '@pinia-plugin-persistedstate/nuxt',
         '@nuxtjs/i18n',
+        'nuxt-gtag',
     ],
     runtimeConfig: {
         public: {
             appName: process.env.APP_NAME,
             apiUrl: process.env.API_URL,
         },
+    },
+    gtag: {
+        id: 'G-SL1CB6Q12T',
     },
     i18n: {
         vueI18n: './i18n.config.ts',
